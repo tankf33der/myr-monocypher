@@ -1,0 +1,16 @@
+use std
+use "monocypher"
+
+const blake2b = {h, m, n
+   monocypher.crypto_blake2b((h : monocypher.uint8_t#), (m : monocypher.uint8_t#), n) 
+}
+
+
+const main = {
+   var h : byte[64]
+   var m : byte[3] = [1,2,3]
+
+   blake2b(&h, &m, m.len)
+   std.assert(h[0] == 207 && h[63] == 2, "boom\n")
+   std.put("ok\n")
+}

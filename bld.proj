@@ -1,0 +1,8 @@
+bin mono =
+   main.myr
+   monocypher.myr
+   monocypher.glue.c
+;;
+gen monocypher.myr monocypher.glue.c {dep=monocypher.h} =
+   mcbind -lmonocypher -bmonocypher monocypher.h
+;;
